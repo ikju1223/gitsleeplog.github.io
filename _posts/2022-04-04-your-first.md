@@ -13,10 +13,11 @@ published: true
 - 해당 문제를 해결하기 위해 비교가 되는 부분의 td 값이 0 이고 해당 tr의 td의 갯수가 최대 td의 갯수보다 적을 때만 비교 하도록 하였다.
 
 ## Code
-// js, jquery, html
-// spring
+- js, jquery, html
+- spring
 
-// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+
+//테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
 function rowMerge(tableName, colums){
          let setTable = $("#"+tableName+" > tbody");
          let totalColums = setTable.find('tr:eq(0)').find('td').length;
