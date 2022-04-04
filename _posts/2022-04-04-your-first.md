@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'js(jquery, html) 세로 줄 병합'
-published: true
+published: false
 ---
 
 왼쪽부터 좌측의 dept에 따라 열병합을 해야 될 일이 생겼다.
