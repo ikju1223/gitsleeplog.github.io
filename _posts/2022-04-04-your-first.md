@@ -3,9 +3,9 @@ layout: post
 title: your-first
 ---
 
-i am sleep
+나는 졸리다
 
-### today too many long time woonho
+### 오늘도 늦게 출근한 운호가 잘못했다
 
 Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by [@mdo](https://twitter.com/mdo). Poole, and every theme built on it (like Hyde here) includes the following:
 
