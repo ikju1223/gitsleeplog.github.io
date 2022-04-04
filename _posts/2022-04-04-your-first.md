@@ -13,8 +13,7 @@ published: true
 - 해당 문제를 해결하기 위해 비교가 되는 부분의 td 값이 0 이고 해당 tr의 td의 갯수가 최대 td의 갯수보다 적을 때만 비교 하도록 하였다.
 
 ## Code
-// js, jquery, html
-// spring
+// js, jquery, html, spring
 
     // 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
     function rowMerge2(tableName, colums){
@@ -67,8 +66,7 @@ published: true
 
 
 ## Code
-// js, jquery, html
-// spring
+// js, jquery, html, spring
 
     // 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
     function rowMerge2(tableName, colums){
@@ -117,11 +115,10 @@ published: true
 
 
 ## Code
-// js, jquery, html
-// spring
+// js, jquery, html, spring
 
-// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
- function rowMerge3(tableName, colums){
+    // 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+    function rowMerge3(tableName, colums){
             let setTable = $("#"+tableName+" > tbody");                                 // 테이블 호출
             let totalColums = setTable.find('tr:eq(0)').find('td').length;                  // 전체 행 갯수
             let totalRow = setTable.find('tr').length;                                 // 전체 열 갯수
@@ -168,11 +165,10 @@ published: true
 -- 다만 여러 불안정한 요소들을 채크 하는 부분을 줄였기 때문에 3번에 비해서는 에러가 나올 가능성이 크다.
 
 ## Code
-// js, jquery, html
-// spring
+// js, jquery, html, spring
 
-// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
-function rowMerge4(tableName, colums){
+    // 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+    function rowMerge4(tableName, colums){
             let setTable = $("#"+tableName+" > tbody");
             let sameCode = 1;
             let k = 0; let i = 1; let j = 0;      
@@ -208,12 +204,11 @@ function rowMerge4(tableName, colums){
 - 배열일경우 배열의 순차적으로 병합, 숫자일경우 왼쪽에서 부터 병합되도록 바꾸었다
 
 ## Code
-// js, jquery, html
-// spring
+// js, jquery, html, spring
 
-// 테이블 id, 왼쪽부터 결합할 행 갯수 혹은 배열(ex. ('userTable',5), ('userTable',[1,0,3,4,5]))
-// 딘 배열일 경우 가장 왼쪽을 1이 아닌 0을 기준으로 입력
-function rowMergeList(tableName, colum){
+    // 테이블 id, 왼쪽부터 결합할 행 갯수 혹은 배열(ex. ('userTable',5), ('userTable',[1,0,3,4,5]))
+    // 딘 배열일 경우 가장 왼쪽을 1이 아닌 0을 기준으로 입력
+    function rowMergeList(tableName, colum){
    			let colums = [];
    			if(typeof(colum) == 'number'){
    				for(let i = 0; i<colum; i++){
