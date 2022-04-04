@@ -17,8 +17,8 @@ published: true
 - spring
 
 
-	// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
-	function rowMerge(tableName, colums){
+    // 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+    function rowMerge(tableName, colums){
          let setTable = $("#"+tableName+" > tbody");
          let totalColums = setTable.find('tr:eq(0)').find('td').length;
          let totalRow = setTable.find('tr').length;
@@ -71,8 +71,8 @@ published: true
 // js, jquery, html
 // spring
 
-// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
-function rowMerge2(tableName, colums){
+    // 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+    function rowMerge2(tableName, colums){
             let setTable = $("#"+tableName+" > tbody");                                 // 테이블 호출
             //let totalColums = setTable.find('tr:eq(0)').find('td').length;                  // 전체 열 갯수
             let totalRow = setTable.find('tr').length;                                 // 전체 행 갯수
