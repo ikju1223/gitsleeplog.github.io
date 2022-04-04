@@ -1,6 +1,10 @@
 ---
 published: false
 ---
+---
+layout: post
+title: Introducing Hyde
+---
 
 i am sleep
 
