@@ -17,7 +17,7 @@ published: true
 - spring
 
 
-//테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
 function rowMerge(tableName, colums){
          let setTable = $("#"+tableName+" > tbody");
          let totalColums = setTable.find('tr:eq(0)').find('td').length;
