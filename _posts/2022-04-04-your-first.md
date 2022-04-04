@@ -17,11 +17,14 @@ published: true
 - spring
 
 
-// 테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+테이블 id, 왼쪽부터 결합할 행 갯수(ex. 'userTable',5)
+
+
 function rowMerge(tableName, colums){
          let setTable = $("#"+tableName+" > tbody");
          let totalColums = setTable.find('tr:eq(0)').find('td').length;
          let totalRow = setTable.find('tr').length;
+         
          for(let k = 0; k < totalRow; k++){                                       // 시작 로우 부터 반복
             for(let j = 0; j < colums; j++){                                    // 컬럼 개수 만큼
                let thisArea = setTable.find('tr:eq('+ k +')').find('td:eq('+ j +')');
@@ -30,6 +33,7 @@ function rowMerge(tableName, colums){
                if(j == (thisTdCount - totalColums + colums)){               
                   break;
                }
+               
                // console.log(k + " " + j);         // k = 행 , 반복되는 열
                let thisTd = thisArea.closest('td').index();                        // 비교될 부분
                let thisTr = thisArea.parent().closest('tr').index();            
