@@ -210,14 +210,14 @@ published: true
     // 테이블 id, 왼쪽부터 결합할 행 갯수 혹은 배열(ex. ('userTable',5), ('userTable',[1,0,3,4,5]))
     // 딘 배열일 경우 가장 왼쪽을 1이 아닌 0을 기준으로 입력
     function rowMergeList(tableName, colum){
-   			let colums = [];
-   			if(typeof(colum) == 'number'){
-   				for(let i = 0; i<colum; i++){
-   					colums.push(i);
-   				}
-   			}else{
-   				colums = colum;
-   			}
+              let colums = [];
+              if(typeof(colum) == 'number'){
+                  for(let i = 0; i<colum; i++){
+                      colums.push(i);
+                  }
+              }else{
+                  colums = colum;
+              }
              let setTable = $("#"+tableName+" > tbody");			// 테이블 호출
              let totalRow = setTable.find('tr').length;				// 전체 열 갯수
              let sameCode = 1;										// 상위 dept 병합 여부 판별 번호			
