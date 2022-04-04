@@ -106,9 +106,50 @@ function rowMerge2(tableName, colums){
             $("td").removeAttr("samecode");
          }
 
-### Browser support
+### 3. 기준을 행에서 열로 변경
+- 2번 방식은 한 행에서 열 비교후 넘어 가기 때문에 다음 행으로 이동시 비교를 안해도 되는 값(deleteCode로 삭제될 값)을 채크 하는 부분이 필요했다
+- 이를 개선 하기위해 한열을 전부 비교하고 다음 열로 넘어가도록 변경하였다(deleteCode 부여 수치 만큼 건너뛴다)
 
-Hyde is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
+ function rowMerge3(tableName, colums){
+            let setTable = $("#"+tableName+" > tbody");                                 // 테이블 호출
+            let totalColums = setTable.find('tr:eq(0)').find('td').length;                  // 전체 행 갯수
+            let totalRow = setTable.find('tr').length;                                 // 전체 열 갯수
+            let sameCode = 1;
+            if(colums > totalColums){
+               colums = totalColums;
+            }
+            for(let j = 0; j < colums; j++){
+               for(let k = 0; k < totalRow; k++){                                    
+                  let thisArea = setTable.find('tr:eq('+ k +')').find('td:eq('+ j +')');
+                  let thisText = thisArea.text();
+                  
+                  // 비교 시작
+                  for(let i = 1; i < (totalRow + 1 - k); i++){   
+                     let nextArea = setTable.find('tr:eq('+ (k + i) +')').find('td:eq('+ j +')');
+                     let nextText = nextArea.text();            
+                     
+                     // 비교 대상이 같고, 상위 dept가 병합되어있는(혹은 상위 dept가 없는경우) 
+                     //경우만 같은 요소로 취급
+                     if((nextText == thisText) 
+                     && ((j == 0) || 
+                     		(nextArea.prev('td').attr("sameCode") == thisArea.prev('td').attr("sameCode")))){
+                        //console.log(thisText + "  " + nextText);   
+                        nextArea.attr("sameCode", sameCode);      // 상위 dept 병합여부 판별용
+                        nextArea.attr("class", "deleteCode");      // 삭제될 부분 저장
+                     }else{
+                        //console.log(thisText + "  " + nextText);
+                        thisArea.attr("sameCode", sameCode);      // 다를경우 중단후 rowpan부여, sameCode 값 증가
+                        thisArea.attr("rowspan", i);
+                        k = k + i - 1;
+                        sameCode = sameCode + 1;
+                        break;
+                     }               
+                  }
+               }
+            }
+            $('.deleteCode').remove();   // 삭제
+            $("td").removeAttr("samecode");
+         }
 
 ### Download
 
