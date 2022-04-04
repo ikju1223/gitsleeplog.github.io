@@ -6,10 +6,10 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            jolidang
-tagline:          '졸리당'
-description:      'I am  <a href="https://ikju1223.github.io/" target="_blank">ikju</a> and <a href="https://ikju1223.github.io/" target="_blank">jolidang</a>.'
-url:              http://hyde.getpoole.com
+title:            ikju
+tagline:          'code'
+description:      'I am small web engineer.'
+url:              'https://github.com/ikju1223'
 baseurl:          /
 
 author:
